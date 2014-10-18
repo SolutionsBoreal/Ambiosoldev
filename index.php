@@ -11,8 +11,8 @@ $user = new User();
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>Bootstrap 101 Template</title>
-
+        <title>Logiciel</title>
+       <!-- todo optionnel un icone qui apparait dans l'onglet -->
         <!-- Bootstrap -->
         <link href="css/bootstrap.min.css" rel="stylesheet">
         <link href="css/bootstraptweak.css" rel="stylesheet">
@@ -25,6 +25,7 @@ $user = new User();
         <![endif]-->
     </head>
     <body>
+
 <?php
 
 if(Session::exists('home')) {
@@ -32,15 +33,21 @@ if(Session::exists('home')) {
 }
 
 if($user->isLoggedIn()) {
+    include 'includes/html/headmenu.php';
 	?>
+<div class="container">
+
+    <div class="starter-template">
+        <h2>Bonjour</h2>
+	<p><a href="profile.php?user=<?php echo escape($user->data()->username); ?>"><?php echo escape($user->data()->username); ?></a>!</p>
 	
-	<p>Hello <a href="profile.php?user=<?php echo escape($user->data()->username); ?>"><?php echo escape($user->data()->username); ?></a>!</p>
-	
-	<ul>
-		<li><a href="logout.php">Log out</a></li>
-		<li><a href="changepassword.php">Change password</a></li>
-		<li><a href="update.php">Update details</a></li>
-	</ul>
+
+		<a href="logout.php">Log out</a><br>
+		<a href="changepassword.php">Change password</a><br>
+		<a href="update.php">Update details</a><br>
+
+        </div>
+    </div>
 
 	<?php
 
@@ -54,8 +61,8 @@ if($user->isLoggedIn()) {
     <div class="container">
 
       <div class="starter-template">
-        <h1>Logiciel</h1>
-        <p class="lead">Ambiosol<br> <?php echo 'Vous devez <a href="login.php">log in</a> ou <a href="register.php">créer un compte</a>'; ?></p>
+        <h1>Bonjour</h1>
+        <p class="lead"> <br> <?php echo 'Vous devez <a href="login.php">log in</a> ou <a href="register.php">créer un compte</a>'; ?></p>
       </div>
 
     </div><!-- /.container -->
