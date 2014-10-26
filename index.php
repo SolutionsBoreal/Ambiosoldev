@@ -36,7 +36,6 @@ if($user->isLoggedIn()) {
     include 'includes/html/headmenu.php';
 	?>
 <div class="container">
-
     <div class="starter-template">
         <h2>Bonjour</h2>
 	<p><a href="profile.php?user=<?php echo escape($user->data()->username); ?>"><?php echo escape($user->data()->username); ?></a>!</p>
