@@ -27,6 +27,17 @@ $user = new User();
         <script src='lib/jquery.min.js'></script>
         <script src='lib/moment.min.js'></script>
         <script src='fullcalendar/fullcalendar.js'></script>
+       <script>
+        $(document).ready(function() {
+
+        // page is now ready, initialize the calendar...
+
+        $('#calendar').fullCalendar({
+        // put your options and callbacks here
+        })
+
+        });
+       </script>
     </head>
     <body>
 
@@ -39,19 +50,21 @@ if(Session::exists('home')) {
 if($user->isLoggedIn()) {
     include 'includes/html/headmenu.php';
 	?>
+<div class="container"><h3>TEST</h3></div>
+    </br><div id='calendar'>something</div>
+<!-- cette section doit plutot aller dans le headmenu.php
 <div class="container">
     <div class="starter-template">
-        <h2>Bonjour</h2>
-	<p><a href="profile.php?user=<?php echo escape($user->data()->username); ?>"><?php echo escape($user->data()->username); ?></a>!</p>
-	
 
-		<a href="logout.php">Log out</a><br>
-		<a href="changepassword.php">Change password</a><br>
-		<a href="update.php">Update details</a><br>
-
-        </div>
+        <p> Bonjour
+	        <a href="profile.php?user=<?php echo escape($user->data()->username); ?>"><?php echo escape($user->data()->username); ?></a>!
+		    <a href="logout.php">Log out</a>&nbsp;
+		    <a href="changepassword.php">Change password</a>&nbsp;
+		    <a href="update.php">Compte</a>
+        </p>
     </div>
-
+</div>
+-->
 	<?php
 
 	if($user->hasPermission('admin')) {
