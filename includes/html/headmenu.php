@@ -31,7 +31,7 @@ if(!$user->isLoggedIn()) {
             <ul class="nav navbar-nav">
                 <li class="active"><a href="index.php">Accueil</a></li>
                 <li><a href="changepassword.php">Change password</a></li>
-                <li><a href="#contact">une autre fonction</a></li>
+                <li><a href="fullcal.php">Test FullCalendar</a></li>
                 <li><a href="#contact">une autre fonction</a></li>
             </ul>
         </div><!--/.nav-collapse -->

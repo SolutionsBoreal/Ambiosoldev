@@ -27,17 +27,13 @@ $user = new User();
         <script src='lib/jquery.min.js'></script>
         <script src='lib/moment.min.js'></script>
         <script src='fullcalendar/fullcalendar.js'></script>
-       <script>
-        $(document).ready(function() {
-
-        // page is now ready, initialize the calendar...
-
-        $('#calendar').fullCalendar({
-        // put your options and callbacks here
-        })
-
-        });
-       </script>
+        <script type='text/javascript'><br>
+            $(document).ready(function() {
+                var date = new Date();
+                var d = date.getDate();
+                var m = date.getMonth();
+                var y = date.getFullYear();
+        </script>
     </head>
     <body>
 
@@ -51,7 +47,7 @@ if($user->isLoggedIn()) {
     include 'includes/html/headmenu.php';
 	?>
 <div class="container"><h3>TEST</h3></div>
-    </br><div id='calendar'>something</div>
+    </br><div id='calendar'></div>
 <!-- cette section doit plutot aller dans le headmenu.php
 <div class="container">
     <div class="starter-template">
