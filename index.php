@@ -27,12 +27,15 @@ $user = new User();
         <script src='lib/jquery.min.js'></script>
         <script src='lib/moment.min.js'></script>
         <script src='fullcalendar/fullcalendar.js'></script>
-        <script type='text/javascript'><br>
+        <script type='text/javascript'>
             $(document).ready(function() {
+                //fullcalendar
                 var date = new Date();
                 var d = date.getDate();
                 var m = date.getMonth();
                 var y = date.getFullYear();
+            }
+
         </script>
     </head>
     <body>
@@ -46,7 +49,8 @@ if(Session::exists('home')) {
 if($user->isLoggedIn()) {
     include 'includes/html/headmenu.php';
 	?>
-<div class="container"><h3>TEST</h3></div>
+<div class="container"><h3>TEST éâäàå</h3></div>
+    <div class="container"><h3 id="wtf">TEST</h3></div>
     </br><div id='calendar'></div>
 <!-- cette section doit plutot aller dans le headmenu.php
 <div class="container">

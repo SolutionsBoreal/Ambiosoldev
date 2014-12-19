@@ -29,12 +29,24 @@ if(!$user->isLoggedIn()) {
         </div>
         <div class="collapse navbar-collapse">
             <ul class="nav navbar-nav">
-                <li class="active"><a href="index.php">Accueil</a></li>
+                <li><a href="index.php">Accueil</a></li>
                 <li><a href="changepassword.php">Change password</a></li>
                 <li><a href="fullcal.php">Test FullCalendar</a></li>
                 <li><a href="#contact">une autre fonction</a></li>
+                <?php //todo layout : le class="active" doit etre dynamique, dépendre de la page ou l'on est ?>
             </ul>
         </div><!--/.nav-collapse -->
     </div>
 </div>
-</br>
+</br></br><?php //todo optionnel du css au lieu de ce </br></br>  ?>
+<script>
+    $(document).ready(function() {
+        $('li a[href="' + window.location.href + '"]').addClass('active');
+    }
+</script>
+<!--<script>
+    $(".nav a").on("click", function(){
+        $(".nav").find(".active").removeClass("active");
+        $(this).parent().addClass("active");
+    });
+</script> -->
