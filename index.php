@@ -73,7 +73,7 @@ if($user->isLoggedIn()) {
 	<?php
 	}
 
-} else { ?>
+} else { // not logged in ?>
     <div class="container">
 
       <div class="starter-template">

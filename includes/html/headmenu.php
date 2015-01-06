@@ -12,9 +12,19 @@
 
 $user = new User();
 
-if(!$user->isLoggedIn()) {
+if(!$user->isLoggedIn()) {  //todo doit-on faire un ce isLoggedIn ici? quel handling faire?
     Redirect::to('index.php');
 }
+//ActiveMenu permet de rendre actif la page choisie dans la barre de menu
+
+function ActiveMenu($requestUri)
+{
+    $current_file_name = basename($_SERVER['REQUEST_URI'], ".php");
+
+    if ($current_file_name == $requestUri)
+        echo 'class="active"';
+}
+
 ?>
 <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
     <div class="container">
@@ -29,24 +39,13 @@ if(!$user->isLoggedIn()) {
         </div>
         <div class="collapse navbar-collapse">
             <ul class="nav navbar-nav">
-                <li><a href="index.php">Accueil</a></li>
-                <li><a href="changepassword.php">Change password</a></li>
-                <li><a href="fullcal.php">Test FullCalendar</a></li>
-                <li><a href="#contact">une autre fonction</a></li>
+                <li <?php ActiveMenu("index"); ?>><a href="index.php">Accueil</a></li>
+                <li <?php ActiveMenu("changepassword"); ?>><a href="changepassword.php">Change password</a></li>
+                <li <?php ActiveMenu("fullcal"); ?>><a href="fullcal.php">Test FullCalendar</a></li>
+                <li <?php ActiveMenu("logout"); ?>><a href="logout.php">Logout</a></li>
                 <?php //todo layout : le class="active" doit etre dynamique, dépendre de la page ou l'on est ?>
             </ul>
         </div><!--/.nav-collapse -->
     </div>
 </div>
-</br></br><?php //todo optionnel du css au lieu de ce </br></br>  ?>
-<script>
-    $(document).ready(function() {
-        $('li a[href="' + window.location.href + '"]').addClass('active');
-    }
-</script>
-<!--<script>
-    $(".nav a").on("click", function(){
-        $(".nav").find(".active").removeClass("active");
-        $(this).parent().addClass("active");
-    });
-</script> -->
+<br/><br/><?php //todo optionnel du css au lieu de ce </br></br>  ?>

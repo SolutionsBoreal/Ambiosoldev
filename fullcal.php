@@ -40,7 +40,7 @@ $user = new User();
                 })
             });
         </script>
-    <?php //todo régler encodage de carractère utf-8 dans fullcalendar
+    <?php //todo régler encodage de carractère utf-8 dans fullcalendar(aucun probleme dans firefox, mais dans chrome oui)
           //todo le systeme de login n'est pas implante sur cette page... ?>
     </head>
     <body>

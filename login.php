@@ -1,6 +1,6 @@
 <?php
 require 'core/init.php';
-// unnessary comment for the heck of commenting  éàèöâ
+// unnecessary comment for the heck of commenting  éàèöâ
 if(Input::exists()) {
 	if(Token::check(Input::get('token'))) {
 		$user = new User();
@@ -11,7 +11,7 @@ if(Input::exists()) {
 		if($login) {
 			Redirect::to('index.php');
 		} else {
-			echo '<p>Sorry, that username and password wasn\'t recognised.</p>';
+			echo '<p>Sorry, that username and password was not recognised.</p>';
 		}
 	}
 }

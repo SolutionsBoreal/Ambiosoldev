@@ -51,6 +51,7 @@ class DB {
 	public function get($table, $where) {
 		return $this->action('SELECT *', $table, $where);
 	}
+    //todo un overload de la function get (ou une function séparée) qui permet de choisir le SELECT, plutot que SELECT * ... voir http://programmers.stackexchange.com/questions/165467/why-php-doesnt-support-function-overloading
 
 	public function delete($table, $where) {
 		return $this->action('DELETE', $table, $where);
@@ -58,7 +59,7 @@ class DB {
 
 	public function action($action, $table, $where = array()) {
 		if(count($where) === 3) {
-			$operators = array('=', '>', '<', '>=', '<=');
+			$operators = array('=', '>', '<', '>=', '<='); //todo ajouter autres operators (BETWEEN, IN, LIKE, etc.)
 
 			$field 		= $where[0];
 			$operator 	= $where[1];
@@ -138,3 +139,5 @@ class DB {
 		return $this->_error;
 	}
 }
+
+//todo sql query  :  Pour chaque projet : étape la plus avancée de chaque piece, avec la date.
