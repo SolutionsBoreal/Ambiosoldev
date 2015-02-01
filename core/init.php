@@ -7,7 +7,7 @@ $GLOBALS['config'] = array(
 		'host' 		=> 'localhost',
 		'username' 	=> 'root',
 		'password' 	=> 'revrespmaw2013',
-		'db' 		=> 'lr'
+		'db' 		=> 'ambiosol_taches'
 	),
 	'remember' => array(
 		'cookie_name'	=> 'hash',

@@ -33,8 +33,8 @@ class User {
 	public function find($user = null) {
 		// Check if user_id specified and grab details
 		if($user) {
-			$field = (is_numeric($user)) ? 'id' : 'username';
-			$data = $this->_db->get('users', array($field, '=', $user));
+			$field = (is_numeric($user)) ? 'idEmploye' : 'nomEmploye';
+			$data = $this->_db->get('Employe', array($field, '=', $user));
 
 			if($data->count()) {
 				$this->_data = $data->first();
@@ -45,7 +45,7 @@ class User {
 	}
 
 	public function create($fields = array()) {
-		if(!$this->_db->insert('users', $fields)) {
+		if(!$this->_db->insert('Employe', $fields)) {
 			throw new Exception('There was a problem creating an account.');
 		}
 	}
@@ -55,7 +55,7 @@ class User {
 			$id = $this->data()->id;
 		}
 		
-		if(!$this->_db->update('users', $id, $fields)) {
+		if(!$this->_db->update('Employe', $id, $fields)) {
 			throw new Exception('There was a problem updating.');
 		}
 	}
